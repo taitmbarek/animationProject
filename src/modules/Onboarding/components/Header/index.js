@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {Text, StyleSheet, Animated, Easing} from 'react-native';
+import {Text, StyleSheet, Animated, Easing, SafeAreaView} from 'react-native';
 import {useEffect} from 'react';
 
 const Header = ({title}) => {
@@ -12,9 +12,11 @@ const Header = ({title}) => {
     }).start();
   }, [translation]);
   return (
-    <Animated.View style={{transform: [{translateX: translation}]}}>
-      <Text style={style.title}>{title}</Text>
-    </Animated.View>
+    <SafeAreaView>
+      <Animated.View style={{transform: [{translateX: translation}]}}>
+        <Text style={style.title}>{title}</Text>
+      </Animated.View>
+    </SafeAreaView>
   );
 };
 

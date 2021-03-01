@@ -53,7 +53,7 @@ const Onboarding = () => {
   return (
     <>
       <StatusBar barStyle={'dark-content'} backgroundColor={'#1495ea'} />
-      <SafeAreaView style={style.container}>
+      <View style={style.container}>
         {isCompleted ? (
           <View style={style.animationContainer}>
             <LottieView
@@ -82,7 +82,7 @@ const Onboarding = () => {
             onConfirm={handleConfirm}
           />
         )}
-      </SafeAreaView>
+      </View>
     </>
   );
 };
@@ -90,7 +90,7 @@ const Onboarding = () => {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    padding: 20,
     backgroundColor: '#1495ea',
   },
   content: {

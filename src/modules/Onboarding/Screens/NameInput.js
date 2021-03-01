@@ -6,6 +6,7 @@ import {
   View,
   Animated,
   Easing,
+  SafeAreaView,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
 import {registerUserUpdate} from '../../../store/Onboarding/actions';
@@ -40,9 +41,11 @@ const NameInput = () => {
   }, []);
   return (
     <>
-      <Animated.View style={{transform: [{translateX: headingTranslation}]}}>
-        <Text style={style.title}>{"Hi \nWHAT'S YOUR NAME"}</Text>
-      </Animated.View>
+      <SafeAreaView>
+        <Animated.View style={{transform: [{translateX: headingTranslation}]}}>
+          <Text style={style.title}>{"Hi \nWHAT'S YOUR NAME"}</Text>
+        </Animated.View>
+      </SafeAreaView>
       <View style={style.container}>
         <Animated.View
           style={{
