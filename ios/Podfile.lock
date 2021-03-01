@@ -67,6 +67,10 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - lottie-ios (3.1.8)
+  - lottie-react-native (3.5.0):
+    - lottie-ios (~> 3.1.8)
+    - React
   - OpenSSL-Universal (1.0.2.20):
     - OpenSSL-Universal/Static (= 1.0.2.20)
   - OpenSSL-Universal/Static (1.0.2.20)
@@ -238,6 +242,9 @@ PODS:
   - React-jsinspector (0.63.4)
   - react-native-safe-area-context (3.1.9):
     - React-Core
+  - react-native-text-input-mask (2.0.1):
+    - React
+    - RNInputMask
   - React-RCTActionSheet (0.63.4):
     - React-Core/RCTActionSheetHeaders (= 0.63.4)
   - React-RCTAnimation (0.63.4):
@@ -304,6 +311,7 @@ PODS:
     - React-Core
   - RNGestureHandler (1.10.3):
     - React-Core
+  - RNInputMask (4.1.0)
   - RNReanimated (1.13.2):
     - React-Core
   - RNScreens (2.18.0):
@@ -337,6 +345,8 @@ DEPENDENCIES:
   - FlipperKit/SKIOSNetworkPlugin (~> 0.54.0)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - lottie-ios (from `../node_modules/lottie-ios`)
+  - lottie-react-native (from `../node_modules/lottie-react-native`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
   - React (from `../node_modules/react-native/`)
@@ -350,6 +360,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+  - react-native-text-input-mask (from `../node_modules/react-native-text-input-mask`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
   - React-RCTBlob (from `../node_modules/react-native/Libraries/Blob`)
@@ -363,6 +374,7 @@ DEPENDENCIES:
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - "RNCPicker (from `../node_modules/@react-native-picker/picker`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNInputMask (from `../node_modules/react-native-text-input-mask/ios/InputMask`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -393,6 +405,10 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
+  lottie-ios:
+    :path: "../node_modules/lottie-ios"
+  lottie-react-native:
+    :path: "../node_modules/lottie-react-native"
   RCTRequired:
     :path: "../node_modules/react-native/Libraries/RCTRequired"
   RCTTypeSafety:
@@ -415,6 +431,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
+  react-native-text-input-mask:
+    :path: "../node_modules/react-native-text-input-mask"
   React-RCTActionSheet:
     :path: "../node_modules/react-native/Libraries/ActionSheetIOS"
   React-RCTAnimation:
@@ -441,6 +459,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-picker/picker"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNInputMask:
+    :path: "../node_modules/react-native-text-input-mask/ios/InputMask"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
@@ -464,6 +484,8 @@ SPEC CHECKSUMS:
   FlipperKit: ab353d41aea8aae2ea6daaf813e67496642f3d7d
   Folly: b73c3869541e86821df3c387eb0af5f65addfab4
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
+  lottie-react-native: 1fb4ce21d6ad37dab8343eaff8719df76035bd93
   OpenSSL-Universal: ff34003318d5e1163e9529b08470708e389ffcdd
   RCTRequired: 082f10cd3f905d6c124597fd1c14f6f2655ff65e
   RCTTypeSafety: 8c9c544ecbf20337d069e4ae7fd9a377aadf504b
@@ -476,6 +498,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 93bd528844ad21dc07aab1c67cb10abae6df6949
   React-jsinspector: 58aef7155bc9a9683f5b60b35eccea8722a4f53a
   react-native-safe-area-context: b6e0e284002381d2ff29fa4fff42b4d8282e3c94
+  react-native-text-input-mask: cffd00848940e7670cf233a99e7be782257935ed
   React-RCTActionSheet: 89a0ca9f4a06c1f93c26067af074ccdce0f40336
   React-RCTAnimation: 1bde3ecc0c104c55df246eda516e0deb03c4e49b
   React-RCTBlob: a97d378b527740cc667e03ebfa183a75231ab0f0
@@ -489,11 +512,12 @@ SPEC CHECKSUMS:
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNCPicker: 6780c753e9e674065db90d9c965920516402579d
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
+  RNInputMask: 815461ebdf396beb62cf58916c35cf6930adb991
   RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
   RNScreens: f0d7a2a440a8ba9f4574ca1ddb3368f473891be4
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 61f8875006d3e1a5d68bd6fe54ecf13c545cba4f
+PODFILE CHECKSUM: 735e9a994df42ffa918e1ff57e7a3b44e3bad3a0
 
 COCOAPODS: 1.8.4
